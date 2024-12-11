@@ -1,0 +1,120 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.circle {
+    margin-top: 25vh;
+    height: 25vw;
+    width: 25vw;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.x {
+    height: 0.3vw;
+    width: 25vw;
+    background-color: black;
+    position: absolute;
+}
+
+.y {
+    rotate: 90deg;
+    height: 0.3vw;
+    width: 25vw;
+    background-color: black;
+    position: absolute;
+}
+
+@keyframes rotate_line {
+    from {
+        transform: rotate(360deg) translate(6.2vw);
+    }
+    to {
+        transform: rotate(0deg) translate(6.2vw);
+    }
+}
+
+.line {
+    rotate: 0deg;
+    margin-left: 6.25%;
+    height: 0.3vw;
+    width: 12.5vw;
+    position: absolute;
+    background-color: red;
+    animation-name: rotate_line;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate_cos {
+    0% {width:12.5vw; margin-left: 12.5%; animation-timing-function: ease-in;}
+    25% {width: 0vw; margin-left: 12.5%; animation-timing-function: ease-out;}
+    50% {width: 12.5vw; margin-left: 0%; animation-timing-function: ease-in;}
+    75% {width: 0vw; margin-left: 12.5%; animation-timing-function: ease-out;}
+    100% {width: 12.5vw; margin-left: 12.5%; animation-timing-function: ease-in;}
+}
+
+.cos {
+    rotate: 0deg;
+    margin-left: 12.5%;
+    height: 0.3vw;
+    width: 12.5vw;
+    position: absolute;
+    background-color: rgb(255, 234, 0);
+    animation-name: rotate_cos;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin: auto;
+}
+
+@keyframes rotate_sin {
+    0% {margin-left: 25%; animation-timing-function: ease-in;}
+    25% {margin-left: 12.5%; animation-timing-function: ease-out;}
+    49.5% {margin-left: 0%; animation-timing-function: ease-out;}
+    50% {margin-left: 0%; animation-timing-function: ease-in;}
+    75% {margin-left: 12.5%; animation-timing-function: ease-out;}
+    100% {margin-left: 25%; animation-timing-function: ease-in;}
+}
+
+@keyframes scale_sin {
+    0% {animation-timing-function: ease-out; height: 0vw; margin-top: 0%;}
+    25% {animation-timing-function: ease-in; height: 12.5vw; margin-top: -12.5%;}
+    49.5% {animation-timing-function: ease-in; height: 0vw; margin-top: 0%;}
+    50% {animation-timing-function: ease-out; height: 0vw; margin-top: 0%;}
+    75% {animation-timing-function: ease-in; height: 12.5vw; margin-top: 12.5%;}
+    100% {animation-timing-function: ease-out; height: 0vw; margin-top: 0%;}
+}
+
+.sin {
+    rotate: 0deg;
+    margin-left: 18.75%;
+    margin-top: -12.5%;
+    width: 0.3vw;
+    height: 12.5vw;
+    position: absolute;
+    background-color: rgb(25, 0, 255);
+    animation-name: rotate_sin, scale_sin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin: auto;
+}
+
+#sin-text {
+    font-size: 2vw;
+    position: absolute;
+    margin-top: -26%;
+    margin-left: 11.5%;
+}
+
+#cos-text {
+    font-size: 2vw;
+    position: absolute;
+    margin-left: 26%;
+}
